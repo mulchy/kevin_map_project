@@ -11,11 +11,11 @@ function initialize() {
     zoom: 13,
     streetViewControl: false
   };
-  
+
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-  google.maps.event.addListener(map, 'click', function(e) { 
+  google.maps.event.addListener(map, 'click', function(e) {
     parent.postMessage("message", "*")
   });
 }
@@ -23,9 +23,7 @@ function initialize() {
 window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event){
-  view.innerHTML = "<h1>Please work</h1>";
+  view.innerHTML = "<h1>It works!</h1>";
 }
-
-
 
 google.maps.event.addDomListener(window, 'load', initialize);
